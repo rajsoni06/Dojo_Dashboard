@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Academy - Learn Tech Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-bar {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(45deg, #4ecdc4, #45b7af);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .nav-item:hover .dropdown-content {
+            display: block;
+        }
+
+        .search-bar {
+            padding: 0.9rem 1.5rem;
+            border-radius: 25px;
+            border: none;
+            width: 420px;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+            width: 350px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.8;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Course Grid Section */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+        }
+
+        .course-card {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 15px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-card p {
+            opacity: 0.9;
+        }
+
+        .badge {
+            background: rgba(0,0,0,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            align-self: flex-start;
+        }
+
+        /* Progress Tracker Section */
+        .progress-tracker {
+            padding: 3rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            text-align: center;
+        }
+
+        .progress-tracker h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 80%;
+            height: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Footer Section */
+        .footer {
+            padding: 2rem;
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+
+
+
+        .circular-progress-container {
+    display: inline-block;
+    text-align: center;
+    margin: 1rem;
+}
+
+.circular-progress {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#4ecdc4 0%, #1a1a2e 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.circular-progress::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #1a1a2e;
+}
+
+.circular-progress span {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.circular-progress-container p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">DOJO</div>
+        
+        <nav class="nav-bar">
+            <div class="nav-item">
+                Courses ▼
+                <div class="dropdown-content">
+                    <div class="dropdown-item">Web Development</div>
+                    <div class="dropdown-item">Data Science</div>
+                    <div class="dropdown-item">Cyber Security</div>
+                    <div class="dropdown-item">AI/ML</div>
+                </div>
+            </div>
+            <div class="nav-item">Learning Paths ▼
+                <div class="dropdown-content">
+                    <div class="dropdown-item">Beginner to Pro</div>
+                    <div class="dropdown-item">Career Tracks</div>
+                    <div class="dropdown-item">Certification Prep</div>
+                </div>
+            </div>
+    
+            <div class="nav-item">Badges ▼
+            <div class="dropdown-content">
+                    <div class="dropdown-item">Certifications</div>
+                    <div class="dropdown-item">Points</div>
+                </div>
+            </div>
+
+            <div class="nav-item">Community</div>
+        </nav>
+
+        <input type="text" class="search-bar" placeholder="Find your next skill...">    
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Dojo Academy</h1>
+        <p>Master the skills of tomorrow, today.</p>
+    </section>
+
+    <!-- Course Grid Section -->
+    <section class="course-grid">
+        <div class="course-card">
+            <div class="badge">New</div>
+            <h3>AI-Powered Web Development</h3>
+            <p>Build intelligent applications with React & TensorFlow</p>
+        </div>
+        
+        <div class="course-card" style="background: linear-gradient(45deg, #4ecdc4, #45b7af)">
+            <div class="badge">Popular</div>
+            <h3>Quantum Computing Basics</h3>
+            <p>Master quantum algorithms with Q#</p>
+        </div>
+
+        <div class="course-card" style="background: linear-gradient(45deg, #ff9a9e, #fad0c4)">
+            <h3>Ethical Hacking</h3>
+            <p>Cybersecurity defense strategies</p>
+        </div>
+    </section>
+
+    <!-- Progress Tracker Section -->
+    <section class="progress-tracker">
+        <h2>Your Learning Progress</h2>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+
+
+
+
+
+<br>
+
+        <div class="circular-progress-container">
+    <div class="circular-progress" data-progress="25">
+        <span>25%</span>
+    </div>
+    <p>Web Development</p>
+</div>
+
+<div class="circular-progress-container">
+    <div class="circular-progress" data-progress="50">
+        <span>50%</span>
+    </div>
+    <p>Data Science</p>
+</div>
+
+<div class="circular-progress-container">
+    <div class="circular-progress" data-progress="75">
+        <span>75%</span>
+    </div>
+    <p>AI</p>
+</div>
+
+<div class="circular-progress-container">
+    <div class="circular-progress" data-progress="10">
+        <span>10%</span>
+    </div>
+    <p>Cybersecurity</p>
+</div>
+    </section>
+<br> <br> <br> <br> <br> <br> 
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Dojo Academy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for SPA
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Progress Bar Animation
+        const progressBarFill = document.getElementById('progress-bar-fill');
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 10;
+            progressBarFill.style.width = `${progress}%`;
+            if (progress >= 70) clearInterval(interval); // Simulate 70% progress
+        }, 500);
+
+        // Course Card Interaction
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    card.style.transform = 'translateY(-10px)';
+                }, 200);
+                // Add course enrollment logic here
+            });
+        });
+
+        // Search Bar Animation
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.addEventListener('focus', () => {
+            searchBar.style.width = '350px';
+        });
+        searchBar.addEventListener('blur', () => {
+            searchBar.style.width = '300px';
+        });
+
+        // Dropdown Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.querySelector('.dropdown-content').style.display = 'block';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.querySelector('.dropdown-content').style.display = 'none';
+            });
+        });
+
+
+
+
+        // Circular Progress Animation
+document.querySelectorAll('.circular-progress').forEach(progress => {
+    const progressValue = progress.getAttribute('data-progress');
+    progress.style.background = `conic-gradient(#4ecdc4 ${progressValue}%, #1a1a2e ${progressValue}%)`;
+});
+    </script>
+</body>
+</html>
