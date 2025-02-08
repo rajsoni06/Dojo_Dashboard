@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: url('Broken_Glass.gif') no-repeat center center/cover; /* Add your GIF here */
+            background: url('https://i.gifer.com/PwSB.gif') no-repeat center center/cover; /* Add your GIF here */
             padding: 0 2rem;
             color: white; /* Ensure text is visible */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text for better visibility */
@@ -208,7 +208,111 @@
     animation: navPulse 0.5s ease;
 }
 
+@media (max-width: 768px) {
+    .header {
+        padding: 0 1rem;
+        height: 60px;
+    }
 
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-container {
+        gap: 1rem;
+    }
+
+    /* Hide desktop navigation */
+    .nav-bar {
+        display: none;
+    }
+
+    /* Mobile menu button */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile menu styles */
+    .mobile-nav {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 80%;
+        height: calc(100vh - 60px);
+        background: linear-gradient(145deg, rgba(106,17,203,0.95) 0%, rgba(37,117,252,0.95) 100%);
+        backdrop-filter: blur(25px);
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        overflow-y: auto;
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-nav .nav-item {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.1);
+    }
+
+    .mobile-nav .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0.5rem;
+        display: none;
+    }
+
+    .mobile-nav .nav-item:hover .dropdown-content {
+        display: block;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Transform hamburger to X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
 
 
 
@@ -469,6 +573,140 @@
         background: rgba(26, 26, 46, 0.85) !important;
         backdrop-filter: blur(8px);
     }
+
+
+    /* Add this media query at the end of your CSS */
+@media (max-width: 768px) {
+    /* Container adjustments */
+    .circular-progress-container {
+        margin: 0.5rem !important;
+        width: 45% !important; /* 2 items per row */
+    }
+
+    /* Progress circle sizing */
+    .circular-progress {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .progress-glow {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Inner circle adjustment */
+    .circular-progress div[style*="width: 80px"] {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    /* Text adjustments */
+    .circular-progress span {
+        font-size: 1rem !important;
+    }
+
+    .circular-progress-container p {
+        font-size: 0.9rem !important;
+    }
+
+    /* Layout adjustments */
+    div[style*="display: flex; justify-content: center"] {
+        flex-wrap: wrap;
+        margin-top: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .circular-progress-container {
+        width: 90% !important; /* 1 item per row */
+        margin: 0.5rem auto !important;
+    }
+    
+    .circular-progress {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .progress-glow {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these media queries to your existing CSS */
+@media (max-width: 768px) {
+    .progress-tracker {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .progress-tracker h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+
+    .progress-bar {
+        width: 90% !important;
+        height: 15px !important;
+    }
+
+    /* Circular progress container adjustments */
+    div[style*="display: flex; justify-content: center"] {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem !important;
+    }
+
+    .circular-progress-container {
+        margin: 0.8rem 0 !important;
+        width: 80% !important;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .progress-tracker {
+        padding: 1rem 0.5rem !important;
+    }
+
+    .progress-tracker h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .progress-bar {
+        width: 95% !important;
+        height: 12px !important;
+    }
+
+    .circular-progress-container {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .circular-progress {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .circular-progress span {
+        font-size: 1rem !important;
+    }
+
+    .circular-progress-container p {
+        font-size: 0.85rem !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -700,6 +938,40 @@ document.querySelectorAll('.circular-progress').forEach(progress => {
 <br> <br> 
 
 </section>
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="profile-header">
+        <div class="profile-pic">RS</div>
+        <div class="profile-info">
+            <h2>Raj Soni</h2>
+            <p>Web Developer | Data Enthusiast</p>
+        </div>
+    </div>
+
+    <div class="achievements">
+        <h3>Achievements</h3>
+        <div class="achievement-card">
+            <h4>Completed 10 Courses</h4>
+            <p>You've successfully completed 10 courses on Sphinx Academy.</p>
+        </div>
+        <div class="achievement-card">
+            <h4>Top 5% Learner</h4>
+            <p>You're among the top 5% learners on the platform.</p>
+        </div>
+    </div>
+
+    <div class="activity-feed">
+        <h3>Recent Activity</h3>
+        <div class="activity-card">
+            <h4>Started "AI-Powered Web Development"</h4>
+            <p>2 hours ago</p>
+        </div>
+        <div class="activity-card">
+            <h4>Completed "Quantum Computing Basics"</h4>
+            <p>1 day ago</p>
+        </div>
+    </div>
+</section>
 
 <br> <br>
 
@@ -886,6 +1158,38 @@ document.querySelectorAll('.circular-progress').forEach(progress => {
 </footer>
 
     <script>
+
+
+// For Nav Bar
+        document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.header')) {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+
+    // Handle dropdowns in mobile menu
+    document.querySelectorAll('.mobile-nav .nav-item').forEach(item => {
+        item.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                item.querySelector('.dropdown-content').classList.toggle('active');
+            }
+        });
+    });
+});
+
+
         // Smooth scrolling for SPA
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
