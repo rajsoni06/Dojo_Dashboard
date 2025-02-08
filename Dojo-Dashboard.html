@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sphinx Academy - Learn Tech Skills</title>
     <style>
+        /* Existing CSS (unchanged) */
         * {
             margin: 0;
             padding: 0;
@@ -18,82 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Section */
-        .header {
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-family: 'Impact', sans-serif;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-bar {
-            display: flex;
-            gap: 2rem;
-            position: relative;
-        }
-
-        .nav-item {
-            position: relative;
-            padding: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .nav-item:hover {
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: linear-gradient(45deg, #4ecdc4, #45b7af);
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            border-radius: 8px;
-            padding: 1rem;
-        }
-
-        .nav-item:hover .dropdown-content {
-            display: block;
-        }
-
-        .search-bar {
-            padding: 0.9rem 1.5rem;
-            border-radius: 25px;
-            border: none;
-            width: 420px;
-            background: rgba(255,255,255,0.9);
-            transition: all 0.3s;
-        }
-
-        .search-bar:focus {
-            outline: none;
-            box-shadow: 0 0 15px rgba(255,255,255,0.3);
-            width: 350px;
-        }
-
-        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -101,9 +26,191 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: url('Broken_Glass.gif') no-repeat center center/cover; /* Add your GIF here */
             padding: 0 2rem;
+            color: white; /* Ensure text is visible */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to text for better visibility */
         }
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 2rem;
+    background: linear-gradient(145deg, #6a11cb 0%, #2575fc 50%, #37ecba 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border-radius: 0 0 25px 25px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 1000;
+    height: 70px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-family: 'Arial Rounded MT', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #fff 30%, #a9f3ff 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.nav-item {
+    color: white;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(145deg, rgba(106,17,203,0.3) 0%, rgba(37,117,252,0.3) 100%);
+    border-radius: 15px 15px 0 0;
+    border-top: 2px solid rgba(255,255,255,0.3);
+}
+
+.nav-item:hover {
+    background: linear-gradient(145deg, rgba(106,17,203,0.5) 0%, rgba(37,117,252,0.5) 100%);
+    transform: perspective(1000px) rotateX(10deg) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255,255,255,0.15);
+    border-radius: 30px;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.search-bar {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+
+.search-button {
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.search-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Dropdown enhancements */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(145deg, rgba(106,17,203,0.9) 0%, rgba(37,117,252,0.9) 100%);
+    backdrop-filter: blur(25px);
+    border-radius: 0 0 15px 15px;
+    padding: 1rem;
+    min-width: 200px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 0.8rem 1rem;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item:before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.4s;
+}
+
+.dropdown-item:hover:before {
+    left: 100%;
+}
+
+.dropdown-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Active state animation */
+@keyframes navPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.nav-item:hover {
+    animation: navPulse 0.5s ease;
+}
+
+
+
+
 
         .hero h1 {
             font-size: 4rem;
@@ -122,7 +229,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Course Grid Section */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -164,7 +270,6 @@
             align-self: flex-start;
         }
 
-        /* Progress Tracker Section */
         .progress-tracker {
             padding: 3rem;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -192,7 +297,6 @@
             transition: width 1s ease-in-out;
         }
 
-        /* Footer Section */
         .footer {
             padding: 2rem;
             background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
@@ -200,56 +304,181 @@
             opacity: 0.8;
         }
 
-
-
-
-        .circular-progress-container {
-    display: inline-block;
-    text-align: center;
-    margin: 1rem;
+        /* New Profile Section */
+.profile-section {
+    padding: 3rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.circular-progress {
-    width: 100px;
-    height: 100px;
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(145deg, #22304e, #1a243a);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    background: conic-gradient(#4ecdc4 0%, #1a1a2e 0%);
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-}
-
-.circular-progress::before {
-    content: "";
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #1a1a2e;
-}
-
-.circular-progress span {
-    position: relative;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
+    font-weight: bold;
     color: white;
+    box-shadow: inset -5px -5px 10px rgba(255, 255, 255, 0.1),
+                inset 5px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-.circular-progress-container p {
-    margin-top: 0.5rem;
+/* Profile Info */
+.profile-info h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Achievements & Activity Feed */
+.achievements, .activity-feed {
+    margin-top: 2rem;
+}
+
+.achievements h3, .activity-feed h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Achievement & Activity Cards - Glassmorphism Effect */
+.achievement-card, .activity-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), 
+                -4px -4px 10px rgba(255, 255, 255, 0.05);
+}
+
+.achievement-card:hover, .activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3),
+                -6px -6px 15px rgba(255, 255, 255, 0.07);
+}
+
+.achievement-card h4, .activity-card h4 {
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-card p, .activity-card p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
 }
-    </style>
+
+
+
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+.course-card {
+    border-radius: 20px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(20deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: rotate(20deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.course-card:hover {
+    transform: translateZ(10px) rotateX(5deg) rotateY(5deg) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.course-card:hover::before {
+    opacity: 1;
+    top: -10%;
+    left: -10%;
+}
+
+.badge {
+    background: linear-gradient(25deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    align-self: flex-start;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+</style>
+
+<style>
+    /* Add this new rule */
+    .main-content {
+        background: url('https://i.gifer.com/7ynF.gif') fixed;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Update existing sections */
+    .progress-tracker,
+    .course-grid,
+    .footer {
+        background: rgba(26, 26, 46, 0.85) !important;
+        backdrop-filter: blur(8px);
+    }
+</style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-    SPHINX
-    <div style="font-size: 14px; font-family: cursive; text-align: center; margin-top: 5px;">Self Paced Learning</div>
-</div>
-        
+    <div class="logo-container">
+        <div class="logo">SPHINX</div>
+    </div>
+
+    <div class="nav-container">
         <nav class="nav-bar">
             <div class="nav-item">
                 Courses ▼
@@ -260,26 +489,38 @@
                     <div class="dropdown-item">AI/ML</div>
                 </div>
             </div>
-            <div class="nav-item">Learning Paths ▼
+            <div class="nav-item">Paths ▼
                 <div class="dropdown-content">
                     <div class="dropdown-item">Beginner to Pro</div>
                     <div class="dropdown-item">Career Tracks</div>
                     <div class="dropdown-item">Certification Prep</div>
                 </div>
             </div>
-    
             <div class="nav-item">Badges ▼
-            <div class="dropdown-content">
+                <div class="dropdown-content">
                     <div class="dropdown-item">Certifications</div>
                     <div class="dropdown-item">Points</div>
                 </div>
             </div>
-
             <div class="nav-item">Community</div>
+            <div class="nav-item">
+                Profile ▼
+                <div class="dropdown-content">
+                    <div class="dropdown-item">View Profile</div>
+                    <div class="dropdown-item">Settings</div>
+                    <div class="dropdown-item">Logout</div>
+                </div>
+            </div>
         </nav>
+<br> <br> <br> <br> <br> 
+        <div class="search-container">
+    <input type="text" class="search-bar" placeholder="Search courses..." style="font-size: 0.9rem;">
+    <button class="search-button">Go</button>
+</div>
+<br>
+    </div>
+</header>
 
-        <input type="text" class="search-bar" placeholder="Find your next skill...">    
-    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -287,72 +528,362 @@
         <p>Master the skills of tomorrow, today.</p>
     </section>
 
-    <!-- Course Grid Section -->
-    <section class="course-grid">
-        <div class="course-card">
-            <div class="badge">New</div>
-            <h3>AI-Powered Web Development</h3>
-            <p>Build intelligent applications with React & TensorFlow</p>
-        </div>
+<br>
+
+<section class="progress-tracker" style="padding: 2rem; background-color: #1a1a2e; text-align: center;">
+    <h2 style="color: white; margin-bottom: 1rem;">Your Learning Progress</h2>
+    <div class="progress-bar">
+    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+</div>
+
+<style>
+    .progress-bar {
+        width: 80%;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin: 20px auto;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        width: 70%;
+        background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+        transition: width 1s ease-in-out;
+        position: relative;
+        border-radius: 10px;
         
-        <div class="course-card" style="background: linear-gradient(45deg, #4ecdc4, #45b7af)">
-            <div class="badge">Popular</div>
-            <h3>Quantum Computing Basics</h3>
-            <p>Master quantum algorithms with Q#</p>
-        </div>
+        /* 3D Gradient Effect */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3), 
+                    inset 0px -2px 5px rgba(255, 255, 255, 0.3);
 
-        <div class="course-card" style="background: linear-gradient(45deg, #ff9a9e, #fad0c4)">
-            <h3>Ethical Hacking</h3>
-            <p>Cybersecurity defense strategies</p>
-        </div>
-    </section>
-
-    <!-- Progress Tracker Section -->
-    <section class="progress-tracker">
-        <h2>Your Learning Progress</h2>
-        <div class="progress-bar">
-            <div class="progress-bar-fill" id="progress-bar-fill"></div>
-        </div>
-
-
-
+        /* Glossy Overlay */
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 80%);
+        }
+    }
+</style>
 
 
 <br>
 
-        <div class="circular-progress-container">
-    <div class="circular-progress" data-progress="25">
-        <span>25%</span>
-    </div>
-    <p>Web Development</p>
-</div>
 
-<div class="circular-progress-container">
-    <div class="circular-progress" data-progress="50">
-        <span>50%</span>
-    </div>
-    <p>Data Science</p>
-</div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
+        <div class="circular-progress-container" style="display: inline-block; text-align: center; margin: 1rem;">
+            <div class="circular-progress" data-progress="33" style="width: 100px; height: 100px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="progress-glow" style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#00f0ff 0%, #00f0ff 0%, #1a1a2e 0%); box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff; transition: background 6s linear, box-shadow 6s linear;"></div>
+                <div style="content: ''; position: absolute; width: 80px; height: 80px; border-radius: 50%; background: #1a1a2e;"></div>
+                <span style="position: absolute; font-size: 1.2rem; color: white;">33%</span>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8);">Web Development</p>
+        </div>
 
-<div class="circular-progress-container">
-    <div class="circular-progress" data-progress="75">
-        <span>75%</span>
-    </div>
-    <p>AI</p>
-</div>
+        <div class="circular-progress-container" style="display: inline-block; text-align: center; margin: 1rem;">
+            <div class="circular-progress" data-progress="50" style="width: 100px; height: 100px; border-radius: 42%; position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="progress-glow" style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#00f0ff 0%, #00f0ff 0%, #1a1a2e 0%); box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff; transition: background 6s linear, box-shadow 6s linear;"></div>
+                <div style="content: ''; position: absolute; width: 80px; height: 80px; border-radius: 50%; background: #1a1a2e;"></div>
+                <span style="position: absolute; font-size: 1.2rem; color: white;">42%</span>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8);">Data Science</p>
+        </div>
 
-<div class="circular-progress-container">
-    <div class="circular-progress" data-progress="10">
-        <span>10%</span>
+        <div class="circular-progress-container" style="display: inline-block; text-align: center; margin: 1rem;">
+            <div class="circular-progress" data-progress="38" style="width: 100px; height: 100px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="progress-glow" style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#00f0ff 0%, #00f0ff 0%, #1a1a2e 0%); box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff; transition: background 6s linear, box-shadow 6s linear;"></div>
+                <div style="content: ''; position: absolute; width: 80px; height: 80px; border-radius: 50%; background: #1a1a2e;"></div>
+                <span style="position: absolute; font-size: 1.2rem; color: white;">38%</span>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8);">AI</p>
+        </div>
+
+        <div class="circular-progress-container" style="display: inline-block; text-align: center; margin: 1rem;">
+            <div class="circular-progress" data-progress="26" style="width: 100px; height: 100px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center;">
+                <div class="progress-glow" style="width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#00f0ff 0%, #00f0ff 0%, #1a1a2e 0%); box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff, 0 0 45px #00f0ff; transition: background 6s linear, box-shadow 6s linear;"></div>
+                <div style="content: ''; position: absolute; width: 80px; height: 80px; border-radius: 50%; background: #1a1a2e;"></div>
+                <span style="position: absolute; font-size: 1.2rem; color: white;">26%</span>
+            </div>
+            <p style="margin-top: 0.5rem; font-size: 1rem; color: rgba(255, 255, 255, 0.8);">Cybersecurity</p>
+        </div>
     </div>
-    <p>Cybersecurity</p>
-</div>
-    </section>
-<br> <br> <br> <br> <br> <br> 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2023 Dojo Academy. All rights reserved.</p>
-    </footer>
+</section>
+
+<script>
+document.querySelectorAll('.circular-progress').forEach(progress => {
+    const value = progress.getAttribute('data-progress');
+    const startColor = '#00f0ff'; // Neon blue color
+    const gradient = `conic-gradient(${startColor} 0%, ${startColor} ${value}%, #1a1a2e ${value}%)`;
+    setTimeout(() => {
+        progress.querySelector('.progress-glow').style.background = gradient;
+    }, 100); // Delay to ensure CSS transition takes effect
+});
+</script>
+
+<br>
+
+<section class="course-grid">
+    <!-- Card 1 - Neon Purple/Blue -->
+    <div class="course-card" style="background: conic-gradient(from 230deg, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);">
+        <div class="badge">New</div><br>
+        <img src="https://img-c.udemycdn.com/course/750x422/1565838_e54e_18.jpg" alt="Full-Stack Web Development" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>The Complete Full-Stack Web Development</h3>
+        <p style="color: rgba(255,255,255,0.9);">Build applications with React</p>
+    </div>
+
+    <!-- Card 2 - Cyber Green -->
+    <div class="course-card" style="background: radial-gradient(circle at top right, #00ff87, #60efff 50%, #0061ff);">
+        <div class="badge">Popular</div><br>
+        <img src="https://i.ytimg.com/vi/tsbCSkvHhMo/maxresdefault.jpg" alt="Quantum Computing Basics" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>Quantum Computing Basics</h3>
+        <p style="color: rgba(255,255,255,0.9);">Master quantum algorithms with Q#</p>
+    </div>
+
+    <!-- Card 3 - Sunset Orange -->
+    <div class="course-card" style="background: conic-gradient(from 45deg, #ff6b6b, #ff9f43, #ff6b6b);">
+        <div class="badge">Top Rated</div><br>
+        <img src="https://i.ytimg.com/vi/XKHEtdqhLK8/hq720.jpg" alt="Learn Python Programming" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>Learn Python Programming</h3>
+        <p style="color: rgba(255,255,255,0.9);">From the basics to a Python master.</p>
+    </div>
+
+    <!-- Card 4 - Deep Space -->
+    <div class="course-card" style="background: linear-gradient(325deg, #240046 0%, #3c096c 30%, #9d4edd 100%);">
+        <div class="badge">Advanced</div> <br>
+        <img src="https://thedatascientist.com/wp-content/uploads/2023/11/Azure-Devops.png" alt="Azure DevOps Crash Course" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>Azure DevOps Course</h3>
+        <p style="color: rgba(255,255,255,0.9);">Quickly master Azure DevOps tools and practices.</p>
+    </div>
+
+    <!-- Card 5 - Cyberpunk -->
+    <div class="course-card" style="background: linear-gradient(45deg, #ff003c 0%, #ff00ff 50%, #00f7ff 100%);">
+        <div class="badge">Exclusive</div> <br>
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*7CTWrJjnsknWkXelPBDexA.jpeg" alt="The Ultimate DevOps Course" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>The Ultimate DevOps Course</h3>
+        <p style="color: rgba(255,255,255,0.9);">Comprehensive training on DevOps methodologies and tools.</p>
+    </div>
+
+    <!-- Card 6 - Matrix Green -->
+    <div class="course-card" style="background: conic-gradient(from 230deg, #6a11cb 0%, #2575fc 50%, #6a11cb 100%);">
+        <div class="badge">Featured</div> <br>
+        <img src="https://www.oxfordinstitute.in/img/data-science-course.jpg" alt="The Data Science Course" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"><br>The Data Science Course</h3>
+        <p style="color: rgba(255,255,255,0.9);">Comprehensive guide to data analysis and visualization.</p>
+    </div>
+
+    <!-- Card 7 - Neon Pink/Blue -->
+    <div class="course-card" style="background: conic-gradient(from 270deg, #ff00ff 0%, #00ffff 50%, #ff00ff 100%);">
+        <div class="badge">Featured</div> <br>
+        <img src="https://tech-gyan.in/wp-content/uploads/2021/01/Machine-Learning-1.jpg" alt="Machine Learning A-Z" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"> <br>Machine Learning A-Z</h3>
+        <p style="color: rgba(255,255,255,0.9);">Hands-on experience with machine learning algorithms.</p>
+    </div>
+
+    <!-- Card 8 - Golden Hour -->
+    <div class="course-card" style="background: linear-gradient(45deg, #ff9f00 0%, #ffd700 50%, #ff6b00 100%);">
+        <div class="badge">Featured</div> <br>
+        <img src="https://i.ytimg.com/vi/lD1lk8YRXpw/hq720.jpg" alt="100 Days of Code: The Complete Python Pro Bootcamp" style="width: 100%; height: 150px; border-radius: 5%; object-fit: cover;">
+        <h3 style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);"> <br> 100 Days of Code: The Complete Python</h3>
+        <p style="color: rgba(255,255,255,0.9);">Intensive bootcamp to enhance your Python skills.</p>
+    </div>
+</section>
+
+<br> <br> 
+
+</section>
+
+<br> <br>
+
+    <footer class="footer" style="
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(145deg, 
+        #16213e 0%, 
+        #1a1a2e 25%, 
+        #2a2a4a 50%, 
+        #3a3a6a 100%
+    );
+    color: white;
+    position: relative;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
+    border-top: 2px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+">
+    <!-- Animated background elements -->
+    <div style="
+        position: absolute;
+        top: -50%;
+        left: -20%;
+        width: 140%;
+        height: 200px;
+        background: linear-gradient(90deg, 
+            rgba(78,205,196,0.1) 0%, 
+            rgba(106,17,203,0.2) 50%, 
+            rgba(78,205,196,0.1) 100%
+        );
+        transform: rotate(-5deg);
+        animation: bgSlide 20s linear infinite;
+    "></div>
+
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+        position: relative;
+        z-index: 1;
+    ">
+        <!-- Column 1 -->
+        <div style="padding: 1.5rem; backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #4ecdc4; margin-bottom: 1.5rem; font-size: 1.2rem; text-transform: uppercase;">Popular Courses</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Full Stack Development</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">AI & Machine Learning</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Cybersecurity Expert</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Data Science Pro</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div style="padding: 1.5rem; backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #4ecdc4; margin-bottom: 1.5rem; font-size: 1.2rem; text-transform: uppercase;">Resources</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Blog & Tutorials</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Career Services</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Student Success</a>
+                </li>
+                <li style="margin-bottom: 0.8rem;">
+                    <a href="#" style="color: white; text-decoration: none; transition: all 0.3s ease;">Help Center</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div style="padding: 1.5rem; backdrop-filter: blur(10px); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #4ecdc4; margin-bottom: 1.5rem; font-size: 1.2rem; text-transform: uppercase;">Connect With Us</h3>
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <a href="#" style="
+                    color: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #6a11cb, #2575fc);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                "><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="
+                    color: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #1DA1F2, #0077b5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                "><i class="fab fa-twitter"></i></a>
+                <a href="#" style="
+                    color: white;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: linear-gradient(45deg, #E1306C, #FFDC80);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                "><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4 style="color: #4ecdc4; margin-bottom: 1rem; font-size: 1rem;">Newsletter</h4>
+                <div style="display: flex; gap: 0.5rem;">
+                    <input type="email" placeholder="Enter your email" style="
+                        padding: 0.8rem;
+                        border: none;
+                        border-radius: 25px;
+                        background: rgba(255,255,255,0.1);
+                        color: white;
+                        flex: 1;
+                    ">
+                    <button style="
+                        padding: 0.8rem 1.5rem;
+                        border: none;
+                        border-radius: 25px;
+                        background: linear-gradient(45deg, #6a11cb, #2575fc);
+                        color: white;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    ">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    ">
+        <p style="margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.8);">
+            &copy; 2025 Sphinx Academy. All rights reserved.<br>
+            <span style="font-size: 0.8rem; color: rgba(255,255,255,0.6);">
+                Accredited by International Tech Education Board
+            </span>
+        </p>
+    </div>
+
+    <style>
+        @keyframes bgSlide {
+            0% { transform: rotate(-5deg) translateX(-100%); }
+            100% { transform: rotate(-5deg) translateX(100%); }
+        }
+
+        a:hover {
+            color: #4ecdc4 !important;
+            transform: translateY(-2px);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106,17,203,0.4);
+        }
+
+        .fab:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+    </style>
+</footer>
 
     <script>
         // Smooth scrolling for SPA
@@ -405,12 +936,13 @@
         });
 
 
-
-
-        // Circular Progress Animation
 document.querySelectorAll('.circular-progress').forEach(progress => {
-    const progressValue = progress.getAttribute('data-progress');
-    progress.style.background = `conic-gradient(#4ecdc4 ${progressValue}%, #1a1a2e ${progressValue}%)`;
+    const value = progress.getAttribute('data-progress');
+    const startColor = '#ff6b6b'; // Start color
+    const gradient = `conic-gradient(${startColor} 0%, ${startColor} ${value}%, #1a1a2e ${value}%)`;
+    setTimeout(() => {
+        progress.style.background = gradient;
+    }, 100); // Delay to ensure CSS transition takes effect
 });
     </script>
 </body>
